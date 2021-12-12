@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Circular Std";
+  src: local("Circular Std Medium"), local("Circular-Std-Medium"),
+    url("../fonts/CircularStd.ttf") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: local("Circular Std Book"), local("Circular-Std-Book"),
+    url("../fonts/CircularStd-Book.ttf") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+//Fonte
+$fontPrincipal: "Circular Std";
+$fontSecundaria: "Circular Std Book";
+//Cores
+$corPrincipal: #6610f2;
+//Hover
+$hoverPrincipal: #5429cf;
+//Cores textos
+$corBranca: #fefbfb;
+$corBrancaDark: #c9c9c9;
+//Cores Dark
+$corPrincipalDark: #131219;
+$corSegundariaDark: #17161d;
+
+//Mixins
+@mixin FlexBox() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@mixin LarguraMaxContainer() {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@mixin botao {
+  background: linear-gradient(
+    225deg,
+    rgba(102, 16, 242, 0.3) 0%,
+    rgba(102, 16, 242, 0) 100%
+  );
+  color: $corBranca;
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid rgba(102, 16, 242, 0.5);
+  transition: all 0.7s ease;
+  margin-top: 30px;
+  font: {
+    size: 18px;
+    weight: 500;
+    family: $fontSecundaria;
+  }
+  &:hover {
+    padding: 15px 45px;
+    cursor: pointer;
+    max-width: 280px;
+    background: linear-gradient(
+      225deg,
+      rgba(102, 16, 242, 0.6) 0%,
+      rgba(102, 16, 242, 0) 100%
+    );
+  }
+}
+
+@mixin tituloSection {
+  padding-bottom: 20px;
+  color: $corBranca;
+  font: {
+    size: 3.2rem;
+    weight: 500;
+  }
+}
